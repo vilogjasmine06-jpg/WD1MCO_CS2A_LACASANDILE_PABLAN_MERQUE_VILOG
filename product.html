@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTS | THE BOSS BABY</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav>
+            <div class="brand">
+                <img src="MEDIA/logo.jpg" alt="Boss Baby Logo" class="brand-logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%230099ff\'/><path d=\'M50 18c-12 0-20 8-20 18 0 4 2 8 5 11-4 3-7 8-7 14 0 9 7 16 16 16h12c9 0 16-7 16-16 0-6-3-11-7-14 3-3 5-7 5-11 0-10-8-18-20-18zm-6 22h12v4H44v-4zm6 10c8 0 14 6 14 14H30c0-8 6-14 14-14z\' fill=\'white\'/></svg>'">
+                <h1>BOSS BABY</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="Characters.html">CHARACTERS</a></li>
+                <li><a href="product.html" class="active">PRODUCTS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-container">
+        <h2 class="title">OUR PRODUCTS</h2>
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="MEDIA/BABY SHIRT.jpg" alt="Baby Boss Shirt">
+                <h3>Baby Boss Shirt</h3>
+                <p class="description">Comfortable cotton baby shirt.</p>
+                <p class="price">₱599</p>
+                <button onclick="addToCart('Baby Boss Shirt', 599)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/BAG.jpg" alt="Boss Baby Bag">
+                <h3>Boss Baby Bag</h3>
+                <p class="description">Spacious diaper and travel bag.</p>
+                <p class="price">₱980</p>
+                <button onclick="addToCart('Boss Baby Bag', 980)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/BIB FEEDING.jpg" alt="Boss Baby Bib Feeding">
+                <h3>Boss Baby Bib Feeding</h3>
+                <p class="description">Easy-clean waterproof feeding bib.</p>
+                <p class="price">₱980</p>
+                <button onclick="addToCart('Boss Baby Bib Feeding', 980)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/figure.jpg" alt="Boss Baby Action Figure">
+                <h3>Boss Baby Action Figure</h3>
+                <p class="description">Collectible vinyl action figure.</p>
+                <p class="price">₱2,500</p>
+                <button onclick="addToCart('Boss Baby Action Figure', 2500)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/BIB.jpg" alt="Boss Baby Bib">
+                <h3>Boss Baby Bib</h3>
+                <p class="description">Soft cotton everyday baby bib.</p>
+                <p class="price">₱1,200</p>
+                <button onclick="addToCart('Boss Baby Bib', 1200)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/STROLLER.jpg" alt="Boss Baby Stroller">
+                <h3>Boss Baby Stroller</h3>
+                <p class="description">Comfortable and secure travel stroller.</p>
+                <p class="price">₱6,700</p>
+                <button onclick="addToCart('Boss Baby Stroller', 6700)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/PACIFIER.jpg" alt="Boss Baby Pacifier">
+                <h3>Boss Baby Pacifier</h3>
+                <p class="description">Soothing silicone baby pacifier.</p>
+                <p class="price">₱750</p>
+                <button onclick="addToCart('Boss Baby Pacifier', 750)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/SHAMPOO.jpg" alt="Boss Baby Shampoo">
+                <h3>Boss Baby Shampoo</h3>
+                <p class="description">Gentle tear-free formula for babies.</p>
+                <p class="price">₱1,200</p>
+                <button onclick="addToCart('Boss Baby Shampoo', 1200)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/SIPPER.jpg" alt="Boss Baby Sipper">
+                <h3>Boss Baby Sipper</h3>
+                <p class="description">Leak-proof sipper bottle for toddlers.</p>
+                <p class="price">₱660</p>
+                <button onclick="addToCart('Boss Baby Sipper', 660)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="MEDIA/SIPPY CUP.jpg" alt="Boss Baby Sippy Cup">
+                <h3>Boss Baby Sippy Cup</h3>
+                <p class="description">Easy-grip training cup.</p>
+                <p class="price">₱799</p>
+                <button onclick="addToCart('Boss Baby Sippy Cup', 799)">Add to Cart</button>
+            </div>
+
+        </div>
+
+        <section class="cart-section">
+            <h2 id="cart-title">Shopping Cart (0)</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="groceryList"></tbody>
+            </table>
+
+            <div class="cart-summary">
+                <h2>Total: <span id="total-amount">₱0</span></h2>
+                <div class="cart-actions">
+                    <button class="clear-btn" onclick="clearList()">Clear Cart</button>
+                    <button class="checkout-btn" onclick="proceedToCheckout()">Checkout</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h4>CONTACT US</h4>
+            <p>Email: thebossbaby@gmail.com</p>
+            <p>FB Page: The Boss Baby</p>
+            <p>Twitter: @thebossbaby</p>
+        </div>
+        <div>
+            <h4>MEMBERS</h4>
+            <p>Marie Giam L. Lacasandile</p>
+            <p>Angel Nicole R. Merque</p>
+            <p>Frenalyn J. Pablan</p>
+            <p>Jasmine Faye R. Vilog</p>
+        </div>
+        <div>
+            <h4>GO TO</h4>
+            <p><a href="index.html">HOME</a></p>
+            <p><a href="Characters.html">CHARACTERS</a></p>
+            <p><a href="product.html">PRODUCTS</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
